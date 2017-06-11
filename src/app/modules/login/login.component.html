@@ -1,0 +1,26 @@
+<div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <form (ngSubmit)="onSubmit()">
+                    <h1>Login</h1>
+                    <div>
+                        <input type="text" class="form-control" placeholder="username" [(ngModel)]="username" name="username" required autofocus />
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="password" [(ngModel)]="password" name="password" required />
+                    </div>
+                    <div>
+                        <button class="btn btn-default submit" type="submit">login</button>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+</div>

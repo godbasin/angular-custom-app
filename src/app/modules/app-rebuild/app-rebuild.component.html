@@ -1,0 +1,9 @@
+<div style="margin-top: 30px;" *ngIf="!isShown">
+    <h1>Custom App Rebuild</h1>
+    <div>
+        <h2>Input JSON</h2>
+        <textarea [(ngModel)]="json" class="json-input-textarea"></textarea>
+        <h2><a class="btn btn-success" (click)="buildApp()" >Generate App</a></h2>
+    </div>
+</div>
+<new-app *ngIf="isShown" (close)="back()"></new-app>

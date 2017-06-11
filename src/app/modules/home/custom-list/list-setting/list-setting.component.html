@@ -1,0 +1,9 @@
+<div style="margin-top: 30px;">
+    <h1>Custom List Setting</h1>
+    <h2>List Function</h2>
+    <dynamic-form [config]="listConfig" [model]="listModel"></dynamic-form>
+
+    <h1><a class="btn btn-success" (click)="buildList()" >Build List</a></h1>
+    <h1><a class="btn btn-success" (click)="formJson()" >Generate JSON</a></h1>
+    <json-to-html [hidden]="!json" [(ngModel)]="json"></json-to-html>
+</div>
