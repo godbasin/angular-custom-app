@@ -1,6 +1,6 @@
 # Angular Custom App
 
-[Here to experience.](http://ord08xi0c.bkt.clouddn.com/index.html#/home/custom-app)
+[Here to experience.](http://ord2aijir.bkt.clouddn.com/#/home/custom-app)
 
 ## Instruction
 This is a web app for:
