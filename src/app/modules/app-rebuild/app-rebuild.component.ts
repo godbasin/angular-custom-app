@@ -14,7 +14,8 @@ export class AppRebuildComponent implements OnInit {
 
     ngOnInit() {
         // Check if set config.
-        const config = JSON.parse(this.newAppConfig.get());
+        const appConfig = this.newAppConfig.get();
+        const config = appConfig && JSON.parse(appConfig);
         if (config && config.jsonType === 'app-setting') {
             this.isShown = true;
         }

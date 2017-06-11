@@ -22,8 +22,8 @@
                 <br />
                 <ul class="nav side-menu metismenu" id="app-sidebar-menu">
                     <li class="topper-menu" *ngFor="let menu of menus;" [ngClass]="menu.link && isActive(menu.link) ? 'active' : ''">
-                        <a *ngIf="menu.link" [routerLink]="menu.link"><i class="fa" [ngClass]="menu.icon || 'fa-home'"></i> {{menu.text}}</a>
-                        <a *ngIf="!menu.link" class="has-arrow"><i class="fa" [ngClass]="menu.icon || 'fa-home'"></i> {{menu.text}}</a>
+                        <a *ngIf="menu.link" [routerLink]="menu.link"><i class="fa" [ngClass]="menu.icon || 'fa-cog'"></i> {{menu.text}}</a>
+                        <a *ngIf="!menu.link" class="has-arrow"><i class="fa" [ngClass]="menu.icon || 'fa-cog'"></i> {{menu.text}}</a>
                         <ul class="nav child_menu slide">
                             <li *ngFor="let childMenu of menu.childMenus;" class="slide-item" routerLinkActive="current-page">
                                 <a [routerLink]="childMenu.link">{{ childMenu.text }}</a>
@@ -33,5 +33,6 @@
                 </ul>
             </div>
         </div>
+        <div class="sidebar-footer hidden-small"><a href="https://github.com/godbasin" style="width: 100%">By @godbasin</a></div>
     </div>
 </div>

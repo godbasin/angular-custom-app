@@ -1,3 +1,132 @@
-<h1>
-    {{title}}
-</h1>
+<article class="markdown-body entry-content" itemprop="text"><h1><a href="https://github.com/godbasin/angular-custom-app">Angular Custom App</a></h1>
+<h1 style="margin-top: 50px;">Instruction</h1>
+<p>This is a web app for:</p>
+<ul>
+<li>Generate config json for form and list setting.</li>
+<li>Rebuild form and list through input config json.</li>
+</ul>
+<p>Angular-Custom-Form is built with Angular4 and Webpack, with the help of these plugins and libs:</p>
+<ul>
+<li><a href="https://jquery.com/">jQuery</a></li>
+<li><a href="http://getbootstrap.com/">bootstrap</a></li>
+<li><a href="https://github.com/onokumus/metismenu">metisMenu</a></li>
+<li><a href="http://www.bootcss.com/p/bootstrap-datetimepicker/">bootstrap-datetimepicker</a></li>
+<li><a href="https://select2.github.io/">select2</a></li>
+<li><a href="https://github.com/puikinsh/gentelella">gentelella</a></li>
+<li>...</li>
+</ul>
+<h1 style="margin-top: 50px;">How to use</h1>
+<hr>
+<h3>About the project</h3>
+<div class="highlight highlight-source-batchfile"><pre>// clone code
+git clone https://github.com/godbasin/angular-custom-app.git
+<span class="pl-k">cd</span> angular-custom-app
+// npm install
+npm install -g webpack
+npm install -g webpack-dev-server
+npm install
+
+// <span class="pl-k">start</span> project
+npm run dev
+// build
+npm run build</pre></div>
+<h3>About the Page Setting</h3>
+<p>We now have two modes:</p>
+<ol>
+<li>Setting a form, by setting each control that inside the form.</li>
+<li>Setting a list, by provide it certain functions(<code>add</code>/<code>edit</code>/<code>delete</code>) and a dialog form.</li>
+</ol>
+<p><strong>Setting A Form</strong></p>
+<ol>
+<li>Add controls.</li>
+<li>Set up each control.</li>
+<li>Generate json(or build a form).</li>
+</ol>
+<p><strong>Build A Form</strong></p>
+<ol>
+<li>Input json that generated above.</li>
+<li>Build the form.</li>
+</ol>
+<p><strong>Setting A List</strong></p>
+<ol>
+<li>Checked the functions you want(add/edit/delete).</li>
+<li>Set up the dialog form(Same with setting a form).</li>
+<li>Generate json(or build a list).</li>
+</ol>
+<p><strong>Build A List</strong></p>
+<ol>
+<li>Input json that generated above.</li>
+<li>Build the list.</li>
+</ol>
+<p><strong>Setting An App</strong></p>
+<ol>
+<li>Set up the sidebar menus and it's route-link.</li>
+<li>Set up it's link page list config(same with setting a list).</li>
+<li>Generate json(or rebuild a simulation app).</li>
+</ol>
+<p><strong>Rebuild A Simulation App</strong></p>
+<ol>
+<li>Input json that generated above.</li>
+<li>Rebuild the simulation app.</li>
+</ol>
+<h1 style="margin-top: 50px;">Documentation</h1>
+<hr>
+<h3>Control Types</h3>
+<p><strong>By now we support these form control types:</strong></p>
+<ul>
+<li>'text': <code>&lt;input type="text" /&gt;</code></li>
+<li>'number': <code>&lt;input type="number" /&gt;</code></li>
+<li>'select': <code>&lt;select&gt;</code></li>
+<li>'select2': <code>&lt;select2&gt;</code> sealed with <a href="https://select2.github.io/">select2</a> plugins</li>
+<li>'radio': <code>&lt;input type="radio" /&gt;</code> group</li>
+<li>'radio-with-input': radio group with input</li>
+<li>'checkbox': <code>&lt;input type="checkbox" /&gt;</code> group</li>
+<li>'checkbox-with-input': checkbox group with input</li>
+<li>'date'| 'date-time' | 'date-hour': date-picker, sealed with <a href="http://www.bootcss.com/p/bootstrap-datetimepicker/">bootstrap-datetimepicker</a></li>
+<li>'upload-image': images upload with certain limits, such as width/height/size/type</li>
+</ul>
+<h3>Config of Each Control</h3>
+<p><strong>Each control is defined up to these configs:</strong></p>
+<ul>
+<li><code>type (string)</code>: control type(<code>'text'</code>, <code>'number'</code>, <code>'select'</code>, <code>'radio'</code> and more)</li>
+<li><code>label (string)</code>: label for the control</li>
+<li><code>key (string)</code>: key(to connect the data or model and get value) for the control</li>
+<li><code>validations (array)</code>: formbuilder validations
+<ul>
+<li><code>type (string)</code>: <a href="https://angular.io/docs/ts/latest/api/forms/index/Validators-class.html">Validators</a> type(<code>'required'</code>, <code>'email'</code>, <code>'maxLength'</code>, <code>'minLength'</code>, <code>'pattern'</code> and more)</li>
+<li><code>param</code>: Validators' function called with param(<code>maxLength(length)</code>, <code>minLength(length)</code> and more)</li>
+<li><code>message (string)</code>: error message when not valid</li>
+</ul>
+</li>
+<li><code>hiddenWhen (object)</code>: conditions when control hidden
+<ul>
+<li><code>condition</code>: way to combinate <code>validations</code>(<code>'||'</code>, <code>'&amp;&amp;'</code>, <code>''</code>)</li>
+<li><code>validations (array)</code>: conditions when other control match
+<ul>
+<li><code>key (string)</code>: other control's key</li>
+<li><code>validate (string)</code>: validate type(<code>'&gt;'</code>, <code>'&gt;='</code>, <code>'=='</code>, <code>'==='</code>, <code>'!='</code>, <code>'indexOf'</code> and more)</li>
+<li><code>param</code>: value to compare or calculate with other control</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>setOptions (boolean)</code>: if allowed to set options</li>
+<li><code>options</code>: options for select or radio or checkbox etc.
+<ul>
+<li><code>id (string)</code>: option value</li>
+<li><code>text (string)</code>: option text</li>
+<li><code>withInput (boolean)</code>: if with input</li>
+<li><code>type</code>: input type(<code>'text'</code>, <code>'number'</code>, <code>'email'</code>)</li>
+</ul>
+</li>
+<li><code>limit</code>: upload image limit
+<ul>
+<li><code>width (number)</code></li>
+<li><code>height (number)</code></li>
+<li><code>size (number)</code></li>
+<li><code>type? (string)</code></li>
+</ul>
+</li>
+<li><code>description (string)</code>: help description</li>
+</ul>
+</article>

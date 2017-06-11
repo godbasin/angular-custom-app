@@ -14,9 +14,10 @@ export class ListRebuildComponent {
 
     constructor(private newAppConfig: NewAppConfigService) {
         // Check if set config.
-        const config = JSON.parse(this.newAppConfig.get());
+        const appConfig = this.newAppConfig.get();
+        const config = appConfig && JSON.parse(appConfig);
         if (config && config.jsonType === 'list-setting') {
-            this.json = this.newAppConfig.get();
+            this.json = appConfig;
             this.listConfig = config.jsonResult;
             this.isShown = true;
         }

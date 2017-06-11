@@ -13,9 +13,10 @@ export class FormRebuildComponent {
 
     constructor(private newAppConfig: NewAppConfigService) {
         // Check if set config.
-        const config = JSON.parse(this.newAppConfig.get());
+        const appConfig = this.newAppConfig.get();
+        const config = appConfig && JSON.parse(appConfig);
         if (config && config.jsonType === 'form-setting') {
-            this.json = this.newAppConfig.get();
+            this.json = appConfig;
             this.customControl = config.jsonResult;
             this.isShown = true;
         }

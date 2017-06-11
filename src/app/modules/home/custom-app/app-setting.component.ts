@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {ICustomControl} from 'shared/component/dynamic-form/dynamic-form.component';
 import {IListFormConfig} from 'shared/component/dynamic-list/dynamic-list.component';
 import {NewAppConfigService} from 'shared/service/new-app-config.service';
-import {formConfig, listConfig} from './app-setting.config';
+import {listConfig} from './app-setting.config';
 import {formModelTransform} from '../custom-form/form-setting/form-setting.component';
 
 @Component({

@@ -14,7 +14,7 @@ export const menus: ISidebarMenu[] = [{
         text: 'Custom Form'
     }]
 }, {
-    icon: 'fa-setting',
+    icon: 'fa-plus',
     text: 'New App',
     link: '/new-app'
 }, {
