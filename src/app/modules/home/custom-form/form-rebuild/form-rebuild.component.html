@@ -1,9 +1,14 @@
 <div style="margin-top: 30px;">
     <h1>Custom Form Rebuild</h1>
-    <div>
+    <p><strong>Build A Form</strong></p>
+    <ol>
+        <li>Input json that generated above.</li>
+        <li>Build the form.</li>
+    </ol>
+    <div style="margin-top: 30px;">
         <h2>Input JSON</h2>
         <textarea [(ngModel)]="json" class="json-input-textarea"></textarea>
-        <h2><a class="btn btn-success" (click)="buildForm()" >Generate form</a></h2>
+        <h2><a class="btn btn-success" (click)="buildForm()">Generate form</a></h2>
     </div>
     <div>
         <dynamic-form *ngIf="isShown" [config]="customControl"></dynamic-form>

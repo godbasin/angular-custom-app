@@ -1,12 +1,19 @@
 <div style="margin-top: 30px;">
     <h1>Custom App Setting</h1>
+    <p><strong>Setting An App</strong></p>
+    <ol>
+        <li>Set up the sidebar menus and it's route-link.</li>
+        <li>Set up it's link page list config(same with setting a list).</li>
+        <li>Generate json(or rebuild a simulation app).</li>
+    </ol>
 
-    <h2>Menus List</h2>
+
+    <h2 style="margin-top: 30px;">Menus List</h2>
     <div>
         <dynamic-list [config]="listConfig" [(ngModel)]="listModel"></dynamic-list>
     </div>
 
-    <h1><a class="btn btn-success" (click)="buildApp()" >Build APP</a></h1>
-    <h1><a class="btn btn-success" (click)="formJson()" >Generate JSON</a></h1>
+    <h1><a class="btn btn-success" (click)="buildApp()">Build APP</a></h1>
+    <h1><a class="btn btn-success" (click)="formJson()">Generate JSON</a></h1>
     <json-to-html [hidden]="!json" [(ngModel)]="json"></json-to-html>
 </div>

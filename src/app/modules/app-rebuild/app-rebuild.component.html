@@ -1,14 +1,19 @@
 <div *ngIf="!isShown">
     <h3 style="color: red;">You are in the simulation of app rebuild.
-        <a class="btn btn-default" routerLink="/home" >Return to home page.</a>
+        <a class="btn btn-default" routerLink="/home">Return to home page.</a>
     </h3>
 
 
     <h1 style="margin-top: 30px;">Custom App Rebuild</h1>
+    <p><strong>Rebuild A Simulation App</strong></p>
+    <ol>
+        <li>Input json that generated above.</li>
+        <li>Rebuild the simulation app.</li>
+    </ol>
     <div>
         <h2>Input JSON</h2>
         <textarea [(ngModel)]="json" class="json-input-textarea"></textarea>
-        <h2><a class="btn btn-success" (click)="buildApp()" >Generate App</a></h2>
+        <h2><a class="btn btn-success" (click)="buildApp()">Generate App</a></h2>
     </div>
 </div>
 <new-app *ngIf="isShown" (close)="back()"></new-app>
