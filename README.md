@@ -1,7 +1,7 @@
 # Angular Custom App
 
-[Here to experience.](http://ord2aijir.bkt.clouddn.com/#/home/custom-app)
-[中文说明点击这里。](https://github.com/godbasin/angular-custom-app/blob/master/README_CN.md)
+[Here to experience.](http://ord2aijir.bkt.clouddn.com/#/home/custom-app)    
+[中文说明点击这里。](https://github.com/godbasin/angular-custom-app/blob/master/README_CN.md)  
 
 ## Instruction
 This is a web app for:
