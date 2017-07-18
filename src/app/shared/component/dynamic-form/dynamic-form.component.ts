@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ILimit} from 'shared/component/upload-image/upload-image.component';
+import {ILimit} from 'angular-form-components/src/upload-image/upload-image.component';
 import { IListFormConfig } from 'shared/component/dynamic-list/dynamic-list.component';
 import {validate} from '../../tool/validate.tool';
 

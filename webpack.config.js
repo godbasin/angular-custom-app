@@ -28,8 +28,7 @@ var config = {
             },
             {
                 test: /\.ts$/,
-                use: ["babel-loader", "ts-loader", "angular2-template-loader", "angular-router-loader"],
-                exclude: /node_modules/
+                use: ["babel-loader", "ts-loader", "angular2-template-loader", "angular-router-loader"]
             },
             {
                 test: /\.(html|css)$/,

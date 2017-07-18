@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
     '../../../node_modules/metismenu/dist/metisMenu.min.css',
     '../../assets/css/custom.css',
     '../../assets/css/common.css',
-    '../../assets/plugins/datepicker/bootstrap-datetimepicker.min.css',
-    '../../assets/plugins/select2/select2.min.css',
+    // '../../assets/plugins/datepicker/bootstrap-datetimepicker.min.css',
+    // '../../assets/plugins/select2/select2.min.css',
   ],
   encapsulation: ViewEncapsulation.None
 })

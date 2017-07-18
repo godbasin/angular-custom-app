@@ -5,13 +5,19 @@ import {RouterModule} from '@angular/router';
 
 import {AppSidebarComponent} from './component/app-sidebar/app-sidebar.component';
 import {DynamicFormComponent} from './component/dynamic-form/dynamic-form.component';
-import {DateTimePickerComponent} from './component/date-time-picker.component';
-import {Select2Component} from './component/select2.component';
-import {RadioGroupComponent} from './component/radio-group.component';
-import {CheckboxGroupComponent} from './component/checkbox-group.component';
-import {UploadImageComponent} from './component/upload-image/upload-image.component';
-import {CheckboxWithTextComponent} from './component/checkbox-with-input.component';
-import {RadioWithTextComponent} from './component/radio-with-input.component';
+// import components
+import {
+    Select2Component,
+    RadioWithTextComponent,
+    RadioGroupComponent,
+    UploadImageComponent,
+    CheckboxGroupComponent,
+    CheckboxWithTextComponent,
+    DateTimePickerComponent,
+    SelectWithInputComponent,
+    OnFocusLostDirective // For SelectWithInputComponent
+} from 'angular-form-components';
+
 import {JsonToHtmlComponent} from './component/json-to-html.component';
 import {DynamicListComponent} from './component/dynamic-list/dynamic-list.component';
 
@@ -25,7 +31,6 @@ import {SafeUrlPipe} from './pipe/safe-url.pipe';
   declarations: [
     AppSidebarComponent,
     DateTimePickerComponent,
-    Select2Component,
     DynamicFormComponent,
     RadioGroupComponent,
     CheckboxGroupComponent,
@@ -34,6 +39,10 @@ import {SafeUrlPipe} from './pipe/safe-url.pipe';
     RadioWithTextComponent,
     JsonToHtmlComponent,
     DynamicListComponent,
+    Select2Component,
+    SelectWithInputComponent,
+
+    OnFocusLostDirective,
 
     SafeUrlPipe,
 
@@ -41,7 +50,6 @@ import {SafeUrlPipe} from './pipe/safe-url.pipe';
   exports: [
     AppSidebarComponent,
     DateTimePickerComponent,
-    Select2Component,
     DynamicFormComponent,
     RadioGroupComponent,
     CheckboxGroupComponent,
@@ -50,6 +58,10 @@ import {SafeUrlPipe} from './pipe/safe-url.pipe';
     RadioWithTextComponent,
     JsonToHtmlComponent,
     DynamicListComponent,
+    Select2Component,
+    SelectWithInputComponent,
+
+    OnFocusLostDirective,
 
     SafeUrlPipe,
 

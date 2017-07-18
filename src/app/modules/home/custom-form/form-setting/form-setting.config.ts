@@ -4,7 +4,7 @@ import {normalHiddenWhenControl} from './hidden-when-setting.config';
 
 export const normalFormControl: ICustomControl[] = [
     {
-        type: 'select',
+        type: 'select2',
         label: 'type',
         key: 'type',
         validations: [{
