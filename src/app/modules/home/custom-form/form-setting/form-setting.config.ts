@@ -4,12 +4,12 @@ import {normalHiddenWhenControl} from './hidden-when-setting.config';
 
 export const normalFormControl: ICustomControl[] = [
     {
-        type: 'select2',
-        label: 'type',
+        type: 'select',
+        label: '控件类型',
         key: 'type',
         validations: [{
             type: 'required',
-            message: 'Type is required'
+            message: '类型必选'
         }],
         options: [
             {id: 'text', text: 'input-text'},
@@ -23,25 +23,15 @@ export const normalFormControl: ICustomControl[] = [
             {id: 'date-time', text: 'date-time(accuracy: minute)'},
             {id: 'date-hour', text: 'date-time(accuracy: hour)'},
             {id: 'upload-image', text: 'upload images'},
-        ],
-        description: 'Type of control.'
+        ]
     }, {
         type: 'text',
-        label: 'key',
+        label: '控件key',
         key: 'key',
         validations: [{
-            type: 'required',
-            message: 'key is required.'
-        }, {
-            type: 'maxLength',
-            param: 15,
-            message: 'key should no more than 15 characters.'
-        }, {
-            type: 'minLength',
-            param: 3,
-            message: 'key should no less than 3 characters.'
+            type: 'required'
         }],
-        description: 'Key of control connecting to the control model. '
+        description: '控件key，接口/model key'
     }, {
         type: 'text',
         label: 'label',
@@ -50,19 +40,19 @@ export const normalFormControl: ICustomControl[] = [
             type: 'required',
             message: 'label is required'
         }],
-        description: 'Label of control, displaying for users. '
+        description: '控件标签label'
     }, {
         type: 'radio',
-        label: 'use hiddenWhen',
+        label: '是否使用隐藏条件',
         key: 'useHiddenWhen',
         options: [
             {id: 'no', text: 'no'},
             {id: 'yes', text: 'yes'},
         ],
-        description: 'If this control use hiddenWhen condition related to other control.'
+        description: '隐藏条件，用于关联key来判断是否将控件隐藏'
     }, {
         type: 'dynamic-list',
-        label: 'hiddenWhen',
+        label: '隐藏条件列表',
         key: 'hiddenWhen',
         hiddenWhen: {
             condition: '&&',
@@ -76,10 +66,10 @@ export const normalFormControl: ICustomControl[] = [
             functions: ['add', 'edit', 'delete'],
             formConfig: normalHiddenWhenControl
         },
-        description: 'It is for certain conditions related to other control to make this control hidden. Should be careful cause it is still in experiment.'
+        description: '用于某些条件隐藏控件（beta功能）'
     }, {
         type: 'checkbox-with-input',
-        label: 'validations',
+        label: '校验',
         key: 'validations',
         options: [
             {id: 'required', text: 'required'},
@@ -95,7 +85,7 @@ export const normalFormControl: ICustomControl[] = [
                 param: 'no'
             }]
         },
-        description: 'Better to check email/maxLength/minLength only when you use input.'
+        description: '尽量在input类型控件中使用email/maxLength/minLength校验'
     }, {
         type: 'checkbox-with-input',
         label: 'image upload limit',
@@ -106,7 +96,7 @@ export const normalFormControl: ICustomControl[] = [
             {id: 'size', text: 'size(k)', withInput: true, type: 'number'},
             {id: 'type', text: 'type', withInput: true, type: 'text'}
         ],
-        description: 'type can be "jpg" or "png" or "gif"',
+        description: '类型可为"jpg"、"png"、"gif"',
         hiddenWhen: {
             condition: '||',
             validations: [{
@@ -151,7 +141,7 @@ export const normalFormControl: ICustomControl[] = [
         }
     }*/, {
         type: 'dynamic-list',
-        label: 'options setting',
+        label: '选项配置',
         key: 'options',
         listConfig: {
             functions: ['add', 'edit', 'delete'],
@@ -180,11 +170,10 @@ export const normalFormControl: ICustomControl[] = [
                 validate: '!=',
                 param: 'checkbox-with-input'
             }]
-        },
-        description: 'To set the options.'
+        }
     }, {
         type: 'text',
-        label: 'help description',
+        label: '详细描述或补充说明',
         key: 'description'
     }
 ];

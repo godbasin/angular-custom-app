@@ -1,15 +1,15 @@
 <div style="margin-top: 30px;">
-    <h1>Custom List Rebuild</h1>
-    <p><strong>Build A List</strong></p>
+    <h1>自定义列表生成</h1>
+    <p><strong>生成列表</strong></p>
     <ol>
-        <li>Input json that generated above.</li>
-        <li>Build the list.</li>
+        <li>输入上方产生的json配置。</li>
+        <li>生成列表。</li>
     </ol>
-    
+
     <div style="margin-top: 30px;">
-        <h2>Input JSON</h2>
+        <h2>输入JSON</h2>
         <textarea [(ngModel)]="json" class="json-input-textarea"></textarea>
-        <h2><a class="btn btn-success" (click)="buildList()">Generate list</a></h2>
+        <h2><a class="btn btn-success" (click)="buildList()">生成列表</a></h2>
     </div>
     <div>
         <dynamic-list *ngIf="isShown" [config]="listConfig" [(ngModel)]="listModel"></dynamic-list>

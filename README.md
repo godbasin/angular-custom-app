@@ -1,14 +1,13 @@
-# Angular Custom App
+# Angular自定义页面
 
-[Here to experience.](http://ord2aijir.bkt.clouddn.com/#/home/custom-app)    
-[中文说明点击这里。](https://github.com/godbasin/angular-custom-app/blob/master/README_CN.md)  
+[点击体验。](http://otaj284f8.bkt.clouddn.com/#/home/custom-app)
 
-## Instruction
-This is a web app for:
-- Generate config json for form and list setting.
-- Rebuild form and list through input config json.
+## 说明
+这是一个单页面应用，有以下用途:
+- 通过配置的方式，创建表单、列表、页面的配置json文件
+- 通过输入配置json文件，还原表单、列表、页面
 
-Angular-Custom-Form is built with Angular4 and Webpack, with the help of these plugins and libs:
+Angular自定义页面基于Angular(v4.0+)和Webpack2, 以及以下相关插件/库:
 - [jQuery](https://jquery.com/)
 - [bootstrap](http://getbootstrap.com/)
 - [metisMenu](https://github.com/onokumus/metismenu)
@@ -17,96 +16,98 @@ Angular-Custom-Form is built with Angular4 and Webpack, with the help of these p
 - [gentelella](https://github.com/puikinsh/gentelella)
 - ...
 
-## How to use
+## 使用
 ---
-### About the project
+### 项目下载、安装和使用
 
 ``` cmd
-// clone code
+// 复制项目代码
 git clone https://github.com/godbasin/angular-custom-app.git
 cd angular-custom-app
-// npm install
+
+// 安装依赖
 npm install -g webpack
 npm install -g webpack-dev-server
 npm install
 
-// start project
+// 启动项目
 npm run dev
-// build
+// 构建
 npm run build
 ```
 
-### About the Page Setting
-We now have two modes:
-1. Setting a form, by setting each control that inside the form.
-2. Setting a list, by provide it certain functions(`add`/`edit`/`delete`) and a dialog form.
+### 页面配置相关
+有三种模式:
+1. 通过配置表单内每个控件相关属性，来配置表单。
+2. 通过提供表单的功能（增、删、改）以及表单，来配置列表。
+3. 通过配置页面菜单、路由和对应页面列表，来配置页面。
 
-**Setting A Form**
-1. Add controls.
-2. Set up each control.
-3. Generate json(or build a form).
+**配置表单**
+1. 添加控件。
+2. 配置控件相关属性。
+3. 生成json配置（或生成表单）。
 
-**Build A Form**
-1. Input json that generated above.
-2. Build the form.
+**生成表单**
+1. 输入上方产生的json配置。
+2. 生成表单。
 
-**Setting A List**
-1. Checked the functions you want(add/edit/delete).
-2. Set up the dialog form(Same with setting a form).
-3. Generate json(or build a list).
+**配置列表**
+1. 勾选需要的列表功能（增、删、改）。
+2. 配置列表相关表单（与配置表单方式一致）。
+3. 生成json配置（或生成列表）。
 
-**Build A List**
-1. Input json that generated above.
-2. Build the list.
+**生成列表**
+1. 输入上方产生的json配置。
+2. 生成列表。
 
-**Setting An App**
-1. Set up the sidebar menus and it's route-link.
-2. Set up it's link page list config(same with setting a list).
-3. Generate json(or rebuild a simulation app).
+**配置页面**
+1. 配置页面的菜单和路由。
+2. 配置对应页面列表和表单。
+3. 生成json配置（或生成页面）。
 
-**Rebuild A Simulation App**
-1. Input json that generated above.
-2. Rebuild the simulation app.
+**生成页面**
+1. 输入上方产生的json配置。
+2. 生成页面。
 
-## Documentation
+## 文档
 ---
-### Control Types
-**By now we support these form control types:**
+### 控件类型
+**当前支持的控件类型如下:**
 - 'text': `<input type="text" />`
 - 'number': `<input type="number" />`
 - 'select': `<select>`
-- 'select2': `<select2>` sealed with [select2](https://select2.github.io/) plugins
-- 'radio': `<input type="radio" />` group
-- 'radio-with-input': radio group with input
-- 'checkbox': `<input type="checkbox" />` group
-- 'checkbox-with-input': checkbox group with input
-- 'date'| 'date-time' | 'date-hour': date-picker, sealed with [bootstrap-datetimepicker](http://www.bootcss.com/p/bootstrap-datetimepicker/)
-- 'upload-image': images upload with certain limits, such as width/height/size/type
+- 'select2': `<select2>` 使用[select2](https://select2.github.io/)插件封装的select组件
+- 'radio': `<input type="radio" />`组
+- 'radio-with-input': 带输入的radio组
+- 'checkbox': `<input type="checkbox" />`组
+- 'checkbox-with-input': 带输入的checkbox组
+- 'date'| 'date-time' | 'date-hour': 日期时间选择控件，使用[bootstrap-datetimepicker](http://www.bootcss.com/p/bootstrap-datetimepicker/)封装
+- 'upload-image': 带限制（宽、高、大小、类型）的图片上传组件
 
-### Config of Each Control
-**Each control is defined up to these configs:**
-- `type (string)`: control type(`'text'`, `'number'`, `'select'`, `'radio'` and more)
-- `label (string)`: label for the control
-- `key (string)`: key(to connect the data or model and get value) for the control
-- `validations (array)`: formbuilder validations
-  - `type (string)`: [Validators](https://angular.io/docs/ts/latest/api/forms/index/Validators-class.html) type(`'required'`, `'email'`, `'maxLength'`, `'minLength'`, `'pattern'` and more)
-  - `param`: Validators' function called with param(`maxLength(length)`, `minLength(length)` and more)
-  - `message (string)`: error message when not valid
-- `hiddenWhen (object)`: conditions when control hidden
-  - `condition`: way to combinate `validations`(`'||'`, `'&&'`, `''`)
-  - `validations (array)`: conditions when other control match
-    - `key (string)`: other control's key
-    - `validate (string)`: validate type(`'>'`, `'>='`, `'=='`, `'==='`, `'!='`, `'indexOf'` and more)
-    - `param`: value to compare or calculate with other control
-- `setOptions (boolean)`: if allowed to set options
-- `options`: options for select or radio or checkbox etc.
-  - `id (string)`: option value
-  - `text (string)`: option text
-  - `withInput (boolean)`: if with input
-  - `type`: input type(`'text'`, `'number'`, `'email'`)
-- `limit`: upload image limit
+### 控件属性配置
+**每个控件接受以下的属性配置:**
+- `type (string)`: 控件类型(`'text'`, `'number'`, `'select'`, `'radio'`等)
+- `label (string)`: 控件描述（左侧说明）
+- `key (string)`: 控件的关键key(用于获取对应的value或model)
+- `validations (array)`: formbuilder校验
+  - `type (string)`: [Validators](https://angular.io/docs/ts/latest/api/forms/index/Validators-class.html)--校验类型(`'required'`, `'email'`, `'maxLength'`, `'minLength'`, `'pattern'`等)
+  - `param`: 校验回调的传入参数(如`maxLength(length)`传入`length`, `minLength(length)`传入`length`等)
+  - `message (string)`: 校验失败的错误提示
+- `hiddenWhen (object)`: 控件隐藏时的条件（条件隐藏则校验不生效）
+  - `condition`: 条件的整合方式`validations`(`'||'`, `'&&'`, `''`)
+  - `validations (array)`: 其他控件满足的条件配置
+    - `key (string)`: 其他控件的关键key
+    - `validate (string)`: 校验类型(`'>'`, `'>='`, `'=='`, `'==='`, `'!='`, `'indexOf'`等)
+    - `param`: 校验对比值
+- `setOptions (boolean)`: 是否允许自定义选项
+- `options`: select/radio/checkbox等组件的选项
+  - `id (string)`: 选项值
+  - `text (string)`: 选项说明
+  - `withInput (boolean)`: 是否带输入
+  - `type`: 输入类型(`'text'`, `'number'`, `'email'`)
+- `limit`: 上传图片限制
   - `width (number)`
   - `height (number)`
   - `size (number)`
   - `type? (string)`
-- `description (string)`: help description
+- `description (string)`: 帮助说明

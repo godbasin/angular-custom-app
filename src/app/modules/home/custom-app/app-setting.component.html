@@ -1,19 +1,19 @@
 <div style="margin-top: 30px;">
-    <h1>Custom App Setting</h1>
-    <p><strong>Setting An App</strong></p>
+    <h1>自定义页面配置</h1>
+    <p><strong>配置APP步骤：</strong></p>
     <ol>
-        <li>Set up the sidebar menus and it's route-link.</li>
-        <li>Set up it's link page list config(same with setting a list).</li>
-        <li>Generate json(or rebuild a simulation app).</li>
+        <li>配置页面菜单（一级/二级）以及对应页面路由。</li>
+        <li>配置页面的表单对话框。</li>
+        <li>配置页面的列表功能和展示。</li>
+        <li>生成JSON（或生成模拟APP）。</li>
     </ol>
 
 
-    <h2 style="margin-top: 30px;">Menus List</h2>
+    <h2 style="margin-top: 30px;">页面菜单列表</h2>
     <div>
         <dynamic-list [config]="listConfig" [(ngModel)]="listModel"></dynamic-list>
     </div>
 
-    <h1><a class="btn btn-success" (click)="buildApp()">Build APP</a></h1>
-    <h1><a class="btn btn-success" (click)="formJson()">Generate JSON</a></h1>
-    <json-to-html [hidden]="!json" [(ngModel)]="json"></json-to-html>
+    <h1><a class="btn btn-success" (click)="buildApp()">生成模拟页面</a></h1>
+    <h1><a class="btn btn-success" (click)="formJson()">生成JSON</a></h1>
 </div>

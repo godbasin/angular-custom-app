@@ -1,16 +1,17 @@
 <div style="margin-top: 30px;">
-    <h1>Custom List Setting</h1>
-    <p><strong>Setting A List</strong></p>
+    <h1>列表自定义配置</h1>
+    <p><strong>配置列表</strong></p>
     <ol>
-        <li>Checked the functions you want(add/edit/delete).</li>
-        <li>Set up the dialog form(Same with setting a form).</li>
-        <li>Generate json(or build a list).</li>
+        <li>勾选需要的列表功能（增、删、改）。</li>
+        <li>配置列表相关表单（与配置表单方式一致）。</li>
+        <li>生成json配置（或生成列表）。</li>
     </ol>
 
-    <h2 style="margin-top: 30px;">List Function</h2>
+
+    <h2 style="margin-top: 30px;">列表功能</h2>
     <dynamic-form [config]="listConfig" [model]="listModel"></dynamic-form>
 
-    <h1><a class="btn btn-success" (click)="buildList()">Build List</a></h1>
-    <h1><a class="btn btn-success" (click)="formJson()">Generate JSON</a></h1>
+    <h1><a class="btn btn-success" (click)="buildList()">生成列表</a></h1>
+    <h1><a class="btn btn-success" (click)="formJson()">生成JSON</a></h1>
     <json-to-html [hidden]="!json" [(ngModel)]="json"></json-to-html>
 </div>

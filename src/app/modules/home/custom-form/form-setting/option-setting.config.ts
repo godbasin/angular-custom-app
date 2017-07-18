@@ -9,7 +9,7 @@ export const normalOptionsControl: ICustomControl[] = [
             type: 'required',
             message: 'id is required.'
         }],
-        description: 'Value of the option.'
+        description: '选项值'
     }, {
         type: 'text',
         label: 'text',
@@ -18,19 +18,19 @@ export const normalOptionsControl: ICustomControl[] = [
             type: 'required',
             message: 'text is required.'
         }],
-        description: 'Text description for the option.'
+        description: '选项label'
     }, {
         type: 'radio',
-        label: 'with input',
+        label: '是否使用input',
         key: 'withInput',
         options: [
             {id: '0', text: 'no'},
             {id: '1', text: 'yes'},
         ],
-        description: 'If used input, it only works for radio-with-input/checkbox-with-input.'
+        description: '只有效用于radio-with-input/checkbox-with-input控件'
     }, {
         type: 'radio',
-        label: 'input type',
+        label: 'input类型',
         key: 'type',
         options: [
             {id: 'text', text: 'text'},

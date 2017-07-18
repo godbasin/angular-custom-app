@@ -1,14 +1,14 @@
 <div style="margin-top: 30px;">
-    <h1>Custom Form Rebuild</h1>
-    <p><strong>Build A Form</strong></p>
+    <h1>自定义表单生成</h1>
+    <p><strong>生成表单</strong></p>
     <ol>
-        <li>Input json that generated above.</li>
-        <li>Build the form.</li>
+        <li>输入上方产生的json配置。</li>
+        <li>生成表单。</li>
     </ol>
     <div style="margin-top: 30px;">
-        <h2>Input JSON</h2>
+        <h2>输入JSON</h2>
         <textarea [(ngModel)]="json" class="json-input-textarea"></textarea>
-        <h2><a class="btn btn-success" (click)="buildForm()">Generate form</a></h2>
+        <h2><a class="btn btn-success" (click)="buildForm()">生成表单</a></h2>
     </div>
     <div>
         <dynamic-form *ngIf="isShown" [config]="customControl"></dynamic-form>

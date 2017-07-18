@@ -1,14 +1,14 @@
 <div style="margin-top: 30px;">
-    <h1>Custom Form Setting</h1>
-    <p><strong>Setting A Form</strong></p>
+    <h1>自定义表单配置</h1>
+    <p><strong>配置表单</strong></p>
     <ol>
-        <li>Add controls.</li>
-        <li>Set up each control.</li>
-        <li>Generate json(or build a form).</li>
+        <li>添加控件。</li>
+        <li>配置控件相关属性。</li>
+        <li>生成json配置（或生成表单）。</li>
     </ol>
 
     <dynamic-list style="margin-top: 30px;" [config]="formListConfig" [(ngModel)]="customForms"></dynamic-list>
-    <h1><a class="btn btn-success" (click)="buildForm()">Build Form</a></h1>
-    <h1><a class="btn btn-success" (click)="formJson()">Generate JSON</a></h1>
+    <h1><a class="btn btn-success" (click)="buildForm()">生成表单</a></h1>
+    <h1><a class="btn btn-success" (click)="formJson()">生成JSON</a></h1>
     <json-to-html [hidden]="!json" [(ngModel)]="json"></json-to-html>
 </div>

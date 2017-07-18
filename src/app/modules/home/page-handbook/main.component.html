@@ -1,11 +1,12 @@
-<article class="markdown-body entry-content" itemprop="text"><h1><a href="https://github.com/godbasin/angular-custom-app">Angular Custom App</a></h1>
-<h1 style="margin-top: 50px;">Instruction</h1>
-<p>This is a web app for:</p>
+<article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-angular自定义页面" class="anchor" href="#angular自定义页面" aria-hidden="true"></a>Angular自定义页面</h1>
+<p><a href="http://ord2aijir.bkt.clouddn.com/#/home/custom-app">点击体验。</a></p>
+<h2><a id="user-content-说明" class="anchor" href="#说明" aria-hidden="true"></a>说明</h2>
+<p>这是一个单页面应用，有以下用途:</p>
 <ul>
-<li>Generate config json for form and list setting.</li>
-<li>Rebuild form and list through input config json.</li>
+<li>通过配置的方式，创建表单、列表、页面的配置json文件</li>
+<li>通过输入配置json文件，还原表单、列表、页面</li>
 </ul>
-<p>Angular-Custom-Form is built with Angular4 and Webpack, with the help of these plugins and libs:</p>
+<p>Angular自定义页面基于Angular(v4.0+)和Webpack2, 以及以下相关插件/库:</p>
 <ul>
 <li><a href="https://jquery.com/">jQuery</a></li>
 <li><a href="http://getbootstrap.com/">bootstrap</a></li>
@@ -15,111 +16,113 @@
 <li><a href="https://github.com/puikinsh/gentelella">gentelella</a></li>
 <li>...</li>
 </ul>
-<h1 style="margin-top: 50px;">How to use</h1>
+<h2><a id="user-content-使用" class="anchor" href="#使用" aria-hidden="true"></a>使用</h2>
 <hr>
-<h3>About the project</h3>
-<div class="highlight highlight-source-batchfile"><pre>// clone code
+<h3><a id="user-content-项目下载安装和使用" class="anchor" href="#项目下载安装和使用" aria-hidden="true"></a>项目下载、安装和使用</h3>
+<div class="highlight highlight-source-batchfile"><pre>// 复制项目代码
 git clone https://github.com/godbasin/angular-custom-app.git
 <span class="pl-k">cd</span> angular-custom-app
-// npm install
+
+// 安装依赖
 npm install -g webpack
 npm install -g webpack-dev-server
 npm install
 
-// <span class="pl-k">start</span> project
+// 启动项目
 npm run dev
-// build
+// 构建
 npm run build</pre></div>
-<h3>About the Page Setting</h3>
-<p>We now have two modes:</p>
+<h3><a id="user-content-页面配置相关" class="anchor" href="#页面配置相关" aria-hidden="true"></a>页面配置相关</h3>
+<p>有三种模式:</p>
 <ol>
-<li>Setting a form, by setting each control that inside the form.</li>
-<li>Setting a list, by provide it certain functions(<code>add</code>/<code>edit</code>/<code>delete</code>) and a dialog form.</li>
+<li>通过配置表单内每个控件相关属性，来配置表单。</li>
+<li>通过提供表单的功能（增、删、改）以及表单，来配置列表。</li>
+<li>通过配置页面菜单、路由和对应页面列表，来配置页面。</li>
 </ol>
-<p><strong>Setting A Form</strong></p>
+<p><strong>配置表单</strong></p>
 <ol>
-<li>Add controls.</li>
-<li>Set up each control.</li>
-<li>Generate json(or build a form).</li>
+<li>添加控件。</li>
+<li>配置控件相关属性。</li>
+<li>生成json配置（或生成表单）。</li>
 </ol>
-<p><strong>Build A Form</strong></p>
+<p><strong>生成表单</strong></p>
 <ol>
-<li>Input json that generated above.</li>
-<li>Build the form.</li>
+<li>输入上方产生的json配置。</li>
+<li>生成表单。</li>
 </ol>
-<p><strong>Setting A List</strong></p>
+<p><strong>配置列表</strong></p>
 <ol>
-<li>Checked the functions you want(add/edit/delete).</li>
-<li>Set up the dialog form(Same with setting a form).</li>
-<li>Generate json(or build a list).</li>
+<li>勾选需要的列表功能（增、删、改）。</li>
+<li>配置列表相关表单（与配置表单方式一致）。</li>
+<li>生成json配置（或生成列表）。</li>
 </ol>
-<p><strong>Build A List</strong></p>
+<p><strong>生成列表</strong></p>
 <ol>
-<li>Input json that generated above.</li>
-<li>Build the list.</li>
+<li>输入上方产生的json配置。</li>
+<li>生成列表。</li>
 </ol>
-<p><strong>Setting An App</strong></p>
+<p><strong>配置页面</strong></p>
 <ol>
-<li>Set up the sidebar menus and it's route-link.</li>
-<li>Set up it's link page list config(same with setting a list).</li>
-<li>Generate json(or rebuild a simulation app).</li>
+<li>配置页面的菜单和路由。</li>
+<li>配置对应页面列表和表单。</li>
+<li>生成json配置（或生成页面）。</li>
 </ol>
-<p><strong>Rebuild A Simulation App</strong></p>
+<p><strong>生成页面</strong></p>
 <ol>
-<li>Input json that generated above.</li>
-<li>Rebuild the simulation app.</li>
+<li>输入上方产生的json配置。</li>
+<li>生成页面。</li>
 </ol>
-<h1 style="margin-top: 50px;">Documentation</h1>
+<h2><a id="user-content-文档" class="anchor" href="#文档" aria-hidden="true"></a>文档</h2>
 <hr>
-<h3>Control Types</h3>
-<p><strong>By now we support these form control types:</strong></p>
+<h3><a id="user-content-控件类型" class="anchor" href="#控件类型" aria-hidden="true"></a>控件类型</h3>
+<p><strong>当前支持的控件类型如下:</strong></p>
 <ul>
 <li>'text': <code>&lt;input type="text" /&gt;</code></li>
 <li>'number': <code>&lt;input type="number" /&gt;</code></li>
 <li>'select': <code>&lt;select&gt;</code></li>
-<li>'select2': <code>&lt;select2&gt;</code> sealed with <a href="https://select2.github.io/">select2</a> plugins</li>
-<li>'radio': <code>&lt;input type="radio" /&gt;</code> group</li>
-<li>'radio-with-input': radio group with input</li>
-<li>'checkbox': <code>&lt;input type="checkbox" /&gt;</code> group</li>
-<li>'checkbox-with-input': checkbox group with input</li>
-<li>'date'| 'date-time' | 'date-hour': date-picker, sealed with <a href="http://www.bootcss.com/p/bootstrap-datetimepicker/">bootstrap-datetimepicker</a></li>
-<li>'upload-image': images upload with certain limits, such as width/height/size/type</li>
+<li>'select2': <code>&lt;select2&gt;</code> 使用<a href="https://select2.github.io/">select2</a>插件封装的select组件</li>
+<li>'radio': <code>&lt;input type="radio" /&gt;</code>组</li>
+<li>'radio-with-input': 带输入的radio组</li>
+<li>'checkbox': <code>&lt;input type="checkbox" /&gt;</code>组</li>
+<li>'checkbox-with-input': 带输入的checkbox组</li>
+<li>'date'| 'date-time' | 'date-hour': 日期时间选择控件，使用<a href="http://www.bootcss.com/p/bootstrap-datetimepicker/">bootstrap-datetimepicker</a>封装</li>
+<li>'upload-image': 带限制（宽、高、大小、类型）的图片上传组件</li>
 </ul>
-<h3>Config of Each Control</h3>
-<p><strong>Each control is defined up to these configs:</strong></p>
+<h3><a id="user-content-控件属性配置" class="anchor" href="#控件属性配置" aria-hidden="true"></a>控件属性配置</h3>
+<p><strong>每个控件接受以下的属性配置:</strong></p>
 <ul>
-<li><code>type (string)</code>: control type(<code>'text'</code>, <code>'number'</code>, <code>'select'</code>, <code>'radio'</code> and more)</li>
-<li><code>label (string)</code>: label for the control</li>
-<li><code>key (string)</code>: key(to connect the data or model and get value) for the control</li>
-<li><code>validations (array)</code>: formbuilder validations
+<li><code>type (string)</code>: 控件类型(<code>'text'</code>, <code>'number'</code>, <code>'select'</code>, <code>'radio'</code>等)</li>
+<li><code>label (string)</code>: 控件描述（左侧说明）</li>
+<li><code>key (string)</code>: 控件的关键key(用于获取对应的value或model)</li>
+<li><code>validations (array)</code>: formbuilder校验
 <ul>
-<li><code>type (string)</code>: <a href="https://angular.io/docs/ts/latest/api/forms/index/Validators-class.html">Validators</a> type(<code>'required'</code>, <code>'email'</code>, <code>'maxLength'</code>, <code>'minLength'</code>, <code>'pattern'</code> and more)</li>
-<li><code>param</code>: Validators' function called with param(<code>maxLength(length)</code>, <code>minLength(length)</code> and more)</li>
-<li><code>message (string)</code>: error message when not valid</li>
-</ul>
-</li>
-<li><code>hiddenWhen (object)</code>: conditions when control hidden
-<ul>
-<li><code>condition</code>: way to combinate <code>validations</code>(<code>'||'</code>, <code>'&amp;&amp;'</code>, <code>''</code>)</li>
-<li><code>validations (array)</code>: conditions when other control match
-<ul>
-<li><code>key (string)</code>: other control's key</li>
-<li><code>validate (string)</code>: validate type(<code>'&gt;'</code>, <code>'&gt;='</code>, <code>'=='</code>, <code>'==='</code>, <code>'!='</code>, <code>'indexOf'</code> and more)</li>
-<li><code>param</code>: value to compare or calculate with other control</li>
+<li><code>type (string)</code>: <a href="https://angular.io/docs/ts/latest/api/forms/index/Validators-class.html">Validators</a>--校验类型(<code>'required'</code>, <code>'email'</code>, <code>'maxLength'</code>, <code>'minLength'</code>, <code>'pattern'</code>等)</li>
+<li><code>param</code>: 校验回调的传入参数(如<code>maxLength(length)</code>传入<code>length</code>, <code>minLength(length)</code>传入<code>length</code>等)</li>
+<li><code>message (string)</code>: 校验失败的错误提示</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><code>setOptions (boolean)</code>: if allowed to set options</li>
-<li><code>options</code>: options for select or radio or checkbox etc.
+<li><code>hiddenWhen (object)</code>: 控件隐藏时的条件（条件隐藏则校验不生效）
 <ul>
-<li><code>id (string)</code>: option value</li>
-<li><code>text (string)</code>: option text</li>
-<li><code>withInput (boolean)</code>: if with input</li>
-<li><code>type</code>: input type(<code>'text'</code>, <code>'number'</code>, <code>'email'</code>)</li>
+<li><code>condition</code>: 条件的整合方式<code>validations</code>(<code>'||'</code>, <code>'&amp;&amp;'</code>, <code>''</code>)</li>
+<li><code>validations (array)</code>: 其他控件满足的条件配置
+<ul>
+<li><code>key (string)</code>: 其他控件的关键key</li>
+<li><code>validate (string)</code>: 校验类型(<code>'&gt;'</code>, <code>'&gt;='</code>, <code>'=='</code>, <code>'==='</code>, <code>'!='</code>, <code>'indexOf'</code>等)</li>
+<li><code>param</code>: 校验对比值</li>
 </ul>
 </li>
-<li><code>limit</code>: upload image limit
+</ul>
+</li>
+<li><code>setOptions (boolean)</code>: 是否允许自定义选项</li>
+<li><code>options</code>: select/radio/checkbox等组件的选项
+<ul>
+<li><code>id (string)</code>: 选项值</li>
+<li><code>text (string)</code>: 选项说明</li>
+<li><code>withInput (boolean)</code>: 是否带输入</li>
+<li><code>type</code>: 输入类型(<code>'text'</code>, <code>'number'</code>, <code>'email'</code>)</li>
+</ul>
+</li>
+<li><code>limit</code>: 上传图片限制
 <ul>
 <li><code>width (number)</code></li>
 <li><code>height (number)</code></li>
@@ -127,6 +130,6 @@ npm run build</pre></div>
 <li><code>type? (string)</code></li>
 </ul>
 </li>
-<li><code>description (string)</code>: help description</li>
+<li><code>description (string)</code>: 帮助说明</li>
 </ul>
 </article>

@@ -9,10 +9,10 @@ export const normalHiddenWhenControl: ICustomControl[] = [
             type: 'required',
             message: 'key is required.'
         }],
-        description: "Other control's key."
+        description: '其他控件/接口的关键key'
     }, {
         type: 'select',
-        label: 'validate',
+        label: '条件',
         key: 'validate',
         validations: [{
             type: 'required',
@@ -32,12 +32,12 @@ export const normalHiddenWhenControl: ICustomControl[] = [
         description: 'Validate condition, if choose ">=" it works like {key >= param}.'
     }, {
         type: 'text',
-        label: 'param',
+        label: '比较值',
         key: 'param',
         validations: [{
             type: 'required',
             message: 'param is required.'
         }],
-        description: 'Set the param.'
+        description: '用于条件比较，如"name(key)" "==(条件)" "admin(比较值)"'
     }
 ];

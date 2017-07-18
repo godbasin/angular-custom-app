@@ -7,7 +7,7 @@ import {validate} from '../../tool/validate.tool';
 export interface IValidations {
     type: string;                       // 'required' | 'email' | 'maxLength' | 'minLength' | 'pattern'
     param?: any;                        // function call with param
-    message: string;                    // error message when not valid
+    message?: string;                    // error message when not valid
 }
 
 export interface IOptions {

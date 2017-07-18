@@ -1,31 +1,31 @@
-import { ICustomControl } from 'shared/component/dynamic-form/dynamic-form.component';
 import { IListFormConfig } from 'shared/component/dynamic-list/dynamic-list.component';
 import { normalFormControl } from '../custom-form/form-setting/form-setting.config';
+
 
 export const listConfig: IListFormConfig = {
     functions: ['add', 'edit', 'delete'],
     formConfig: [
         {
             type: 'text',
-            label: 'MenuName',
+            label: '菜单名',
             key: 'text',
             validations: [{
                 type: 'required',
                 message: 'MenuName is required.'
             }],
-            description: 'The parent sidebar menu name.'
+            description: '一级菜单名称'
         }, {
             type: 'radio',
-            label: 'Type',
+            label: '菜单内容',
             key: 'type',
             options: [
-                { id: 'withLink', text: 'withLink' },
-                { id: 'withChild', text: 'withChildMenu' }
+                { id: 'withLink', text: '设置路由' },
+                { id: 'withChild', text: '添加子菜单' }
             ],
-            description: 'Add a link or certain children menus to the menu.'
+            description: '设置一级菜单路由，或是添加二级菜单'
         }, {
             type: 'text',
-            label: 'Link',
+            label: '路由名',
             key: 'link',
             hiddenWhen: {
                 condition: '&&',
@@ -35,10 +35,10 @@ export const listConfig: IListFormConfig = {
                     param: 'withLink'
                 }]
             },
-            description: 'To make it work in app simulation, need to be pattern "/" + "your-route-name", such as "/app-setting.'
+            description: '需要在模拟环境中使用请使用格式："/" + "路由名", 如"/app-setting"'
         }, {
             type: 'dynamic-list',
-            label: 'ChildMenus',
+            label: '二级菜单列表',
             key: 'childMenus',
             hiddenWhen: {
                 condition: '&&',
@@ -52,51 +52,57 @@ export const listConfig: IListFormConfig = {
                 functions: ['add', 'edit', 'delete'],
                 formConfig: [{
                     type: 'text',
-                    label: 'Name',
+                    label: '二级菜单名',
                     key: 'text',
                     validations: [{
                         type: 'required',
                         message: 'Name is required.'
-                    }],
-                    description: 'Child sidebar menu name.'
+                    }]
                 }, {
                     type: 'text',
-                    label: 'Link',
+                    label: '路由名',
                     key: 'link',
                     validations: [{
                         type: 'required',
                         message: 'Link is required.'
                     }],
-                    description: 'To make it work in app simulation, need to be pattern "/" + "your-route-name", such as "/app-setting.'
+                    description: '需要在模拟环境中使用请使用格式："/" + "路由名", 如"/app-setting"'
                 }, {
                     type: 'checkbox',
-                    label: 'List Function',
+                    label: '列表功能',
                     key: 'functions',
                     options: [
-                        { id: 'add', text: 'add' },
-                        { id: 'delete', text: 'delete' },
-                        { id: 'edit', text: 'edit' },
+                      { id: 'add', text: '新增' },
+                      { id: 'delete', text: '删除' },
+                      { id: 'edit', text: '编辑' },
+                      { id: 'preRelease', text: '预发布' },
+                      { id: 'onlineRelease', text: '发布' },
+                      { id: 'onlineUnRelease', text: '下架' },
+                      { id: 'adjustSeqData', text: '上下移动' },
                     ],
-                    description: 'The page link to the route, setting its list functions.'
+                    description: '页面列表功能'
                 }, {
                     type: 'dynamic-list',
-                    label: 'Form Setting',
+                    label: '新增/编辑表单配置',
                     key: 'formConfig',
                     listConfig: {
                         functions: ['add', 'edit', 'delete'],
                         formConfig: normalFormControl
-                    },
-                    description: 'Same as setting a form.'
+                    }
                 }]
             }
         }, {
             type: 'checkbox',
-            label: 'List Function',
+            label: '列表功能',
             key: 'functions',
             options: [
-                { id: 'add', text: 'add' },
-                { id: 'delete', text: 'delete' },
-                { id: 'edit', text: 'edit' },
+              { id: 'add', text: '新增' },
+              { id: 'delete', text: '删除' },
+              { id: 'edit', text: '编辑' },
+              { id: 'preRelease', text: '预发布' },
+              { id: 'onlineRelease', text: '发布' },
+              { id: 'onlineUnRelease', text: '下架' },
+              { id: 'adjustSeqData', text: '上下移动' },
             ],
             hiddenWhen: {
                 condition: '&&',
@@ -105,11 +111,10 @@ export const listConfig: IListFormConfig = {
                     validate: '!==',
                     param: 'withLink'
                 }]
-            },
-            description: 'The page link to the route, setting its list functions.'
+            }
         }, {
             type: 'dynamic-list',
-            label: 'Form Setting',
+            label: '新增/编辑表单配置',
             key: 'formConfig',
             listConfig: {
                 functions: ['add', 'edit', 'delete'],
@@ -122,8 +127,7 @@ export const listConfig: IListFormConfig = {
                     validate: '!==',
                     param: 'withLink'
                 }]
-            },
-            description: 'Same as setting a form.'
+            }
         }
     ]
 };
