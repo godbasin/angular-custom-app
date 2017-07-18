@@ -1,6 +1,6 @@
 # Angular自定义页面
 
-[点击体验。](http://ord2aijir.bkt.clouddn.com/#/home/custom-app)
+[点击体验。](http://otaj284f8.bkt.clouddn.com/#/home/custom-app)
 
 ## 说明
 这是一个单页面应用，有以下用途:
