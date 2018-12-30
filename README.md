@@ -1,8 +1,8 @@
 # Angular Custom App
 
-[Here to experience.](http://ord2aijir.bkt.clouddn.com/#/home/custom-app)    
+[Here to experience.](http://angular2-custom-app.godbasin.com/#/home/custom-app)    
 [中文说明点击这里。](https://github.com/godbasin/angular-custom-app/tree/master_cn)  
-[中文应用点击体验。](http://otaj284f8.bkt.clouddn.com/#/home/custom-app)  
+[中文应用点击体验。](http://angular2-custom-app-cn.godbasin.com/#/home/custom-app)  
 [中文分支请切换master_cn](https://github.com/godbasin/angular-custom-app/tree/master_cn)
 
 ## Instruction
